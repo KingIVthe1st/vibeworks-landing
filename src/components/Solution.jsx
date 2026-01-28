@@ -1,89 +1,151 @@
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Bot, Mic, Brain, Zap } from 'lucide-react'
+import { Bot, Mic, Brain, Zap, Sparkles } from 'lucide-react'
 
 const benefits = [
   {
-    icon: Bot,
-    title: "AI That Sounds Like You",
-    description: "Trained on your content, your voice, your style. Your audience won't know the difference."
-  },
-  {
     icon: Brain,
-    title: "Learns Your Business",
-    description: "Understands your products, services, and unique way of solving problems."
+    title: "Knows Your Business Cold",
+    description: "Trained on your content, courses, and conversations. It understands your methodology like a senior team member.",
+    gradient: "from-blue-500/20 to-indigo-500/20"
   },
   {
     icon: Mic,
-    title: "Your Voice, Literally",
-    description: "Optional voice cloning means your AI can speak in your actual voice—for voice notes, calls, and more."
+    title: "Speaks in Your Voice",
+    description: "Voice clone technology means your AI can send voice notes and take calls—in your actual voice.",
+    gradient: "from-purple-500/20 to-pink-500/20"
+  },
+  {
+    icon: Bot,
+    title: "Converts Like You",
+    description: "Same sales psychology, same objection handling, same closing style. Your conversion rate, automated.",
+    gradient: "from-indigo-500/20 to-purple-500/20"
   },
   {
     icon: Zap,
-    title: "Works 24/7/365",
-    description: "Never takes a break, never gets sick, never needs motivation. Always on, always helping."
+    title: "Never Sleeps",
+    description: "24/7/365. No sick days, no vacations, no 'I'll get back to you Monday.' Always on, always closing.",
+    gradient: "from-amber-500/20 to-orange-500/20"
   }
 ]
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1]
+    }
+  }
+}
+
 export default function Solution() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, margin: "-50px" })
 
   return (
-    <section className="py-24" ref={ref}>
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-16 sm:py-24 relative overflow-hidden" ref={ref}>
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/10 rounded-full blur-[200px] pointer-events-none" />
+      
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center mb-12 sm:mb-16"
         >
-          <p className="text-indigo-400 font-semibold mb-4">THE SOLUTION</p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Meet your AI <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">twin</span>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-4 sm:mb-6"
+          >
+            <Sparkles className="w-4 h-4 text-indigo-400" />
+            <span className="text-sm text-indigo-300 font-medium">The Solution</span>
+          </motion.div>
+          
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
+            Your AI{' '}
+            <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              twin
+            </span>{' '}
+            is here
           </h2>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-            We don't just set up a chatbot. We create a digital version of you—
-            trained on your expertise, speaking in your voice, representing your brand.
+          <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            Not a chatbot. Not a template. A digital version of{' '}
+            <span className="text-white font-medium">you</span>—trained on your expertise, 
+            speaking in your voice, closing on your behalf.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="grid sm:grid-cols-2 gap-4 sm:gap-6"
+        >
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 rounded-2xl hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-1"
+              variants={itemVariants}
+              className="group relative p-6 sm:p-8 glass rounded-2xl overflow-hidden card-hover"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-xl flex items-center justify-center mb-4">
-                <benefit.icon className="w-6 h-6 text-indigo-400" />
+              {/* Gradient overlay on hover */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              
+              <div className="relative z-10">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500">
+                  <benefit.icon className="w-7 h-7 sm:w-8 sm:h-8 text-indigo-400" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-semibold mb-3">{benefit.title}</h3>
+                <p className="text-slate-400 text-sm sm:text-base leading-relaxed">{benefit.description}</p>
               </div>
-              <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-              <p className="text-slate-400 text-sm">{benefit.description}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Visual showcase */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-16 relative"
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-12 sm:mt-16 relative"
         >
-          <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border border-slate-700/50 overflow-hidden flex items-center justify-center">
-            <div className="text-center p-8">
-              <div className="w-20 h-20 bg-indigo-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Bot className="w-10 h-10 text-indigo-400" />
-              </div>
-              <p className="text-slate-400">Interactive Demo Coming Soon</p>
+          <div className="aspect-video sm:aspect-[21/9] glass rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center relative group">
+            {/* Animated background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-600/20 to-pink-600/20 opacity-50 group-hover:opacity-70 transition-opacity duration-700" />
+            
+            {/* Content */}
+            <div className="text-center p-6 sm:p-8 relative z-10">
+              <motion.div 
+                animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                className="w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-2xl shadow-indigo-500/30"
+              >
+                <Bot className="w-8 h-8 sm:w-12 sm:h-12 text-white" />
+              </motion.div>
+              <p className="text-slate-300 text-sm sm:text-base font-medium mb-2">Interactive Demo</p>
+              <p className="text-slate-500 text-xs sm:text-sm">Click to experience your future AI employee</p>
             </div>
           </div>
-          {/* Glow effect */}
-          <div className="absolute -inset-px bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20 rounded-2xl blur-xl opacity-50 -z-10" />
+          
+          {/* Premium glow */}
+          <div className="absolute -inset-px bg-gradient-to-r from-indigo-500/30 via-purple-500/30 to-pink-500/30 rounded-2xl sm:rounded-3xl blur-xl opacity-40 -z-10 group-hover:opacity-60 transition-opacity" />
         </motion.div>
       </div>
     </section>
