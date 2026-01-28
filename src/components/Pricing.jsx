@@ -13,52 +13,52 @@ const plans = [
       "AI trained on your content & voice",
       "Website chatbot deployment",
       "Lead capture & qualification",
-      "Real-time notifications",
+      "Real-time Slack/email alerts",
       "1-hour strategy session",
       "Monthly optimization call",
       "Email support (24h response)"
     ],
-    cta: "Start with Spark",
+    cta: "Yes, I Want Spark",
     popular: false,
     gradient: "from-slate-800/50 to-slate-900/50"
   },
   {
     name: "IGNITE",
     icon: Sparkles,
-    tagline: "For coaches ready to scale",
+    tagline: "For coaches ready to scale to 7 figures",
     setup: "$5,000",
     monthly: "$997",
     features: [
       "Everything in SPARK, plus:",
-      "Voice clone (sounds like you)",
-      "Instagram, WhatsApp, FB Messenger",
-      "Custom persona development",
+      "Voice clone (your actual voice)",
+      "Instagram + WhatsApp + Messenger",
+      "Custom AI persona development",
       "CRM & calendar integration",
       "Advanced sales sequences",
       "Bi-weekly strategy calls",
-      "Priority support (same-day)"
+      "Priority support (same day)"
     ],
-    cta: "Scale with Ignite",
+    cta: "Yes, Give Me Ignite",
     popular: true,
     gradient: "from-indigo-900/60 to-purple-900/60"
   },
   {
     name: "BLAZE",
     icon: Crown,
-    tagline: "White-glove for 7-figure brands",
+    tagline: "White-glove for 7-figure+ brands",
     setup: "$10-15K",
     monthly: "$1,997",
     features: [
       "Everything in IGNITE, plus:",
-      "Video AI clone",
+      "Video AI clone (your face + voice)",
       "Full funnel automation",
-      "White-label option",
+      "White-label for your clients",
       "Custom API integrations",
       "Dedicated account manager",
       "Weekly strategy sessions",
-      "Revenue share partnership"
+      "Revenue share partnership option"
     ],
-    cta: "Go Blaze",
+    cta: "Let's Talk Blaze",
     popular: false,
     gradient: "from-slate-800/50 to-slate-900/50"
   }
@@ -77,14 +77,14 @@ export default function Pricing() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-10 sm:mb-14"
         >
-          <p className="text-indigo-400 font-semibold mb-3 sm:mb-4 text-sm tracking-wider uppercase">Pricing</p>
+          <p className="text-indigo-400 font-semibold mb-3 sm:mb-4 text-sm tracking-wider uppercase">Investment</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-            Investment that{' '}
-            <span className="text-indigo-400">pays for itself</span>
+            One Client Pays for a{' '}
+            <span className="text-indigo-400">Year of Service</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto">
             One-time setup + monthly partnership.{' '}
-            <span className="text-slate-500">No contracts. Cancel anytime.</span>
+            <span className="text-slate-500">No contracts. No BS. Cancel anytime.</span>
           </p>
         </motion.div>
 
@@ -158,7 +158,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        {/* ROI callout */}
+        {/* ROI callout - Loss aversion framing */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -170,24 +170,24 @@ export default function Pricing() {
           
           <div className="relative z-10">
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-2">
-              Close just <span className="text-indigo-400">one extra deal</span> per month...
+              Every day without your AI clone costs you <span className="text-red-400">$100-300</span> in missed leads.
             </p>
             <p className="text-slate-400 text-sm sm:text-base">
-              ...and your AI pays for itself 5-10x over. Most clients see ROI in week one.
+              Most clients make back their investment in the <span className="text-indigo-400 font-semibold">first 2 weeks</span>.
             </p>
           </div>
         </motion.div>
 
-        {/* Trust badges */}
+        {/* Trust badges - Risk reversal */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-slate-500 text-xs sm:text-sm"
         >
-          <span>🔒 Secure payments via Stripe</span>
-          <span>💳 Payment plans available</span>
-          <span>🤝 30-day satisfaction guarantee</span>
+          <span>🔒 Secure Stripe Payments</span>
+          <span>💳 Payment Plans Available</span>
+          <span>🤝 30-Day Money-Back Guarantee</span>
         </motion.div>
       </div>
     </section>

@@ -5,24 +5,24 @@ import { Star, Quote, TrendingUp } from 'lucide-react'
 const testimonials = [
   {
     name: "Sarah Chen",
-    role: "Business Coach • 45K followers",
-    content: "I was drowning in DMs—literally 200+ per day. Now my AI handles 80% of them, and the quality of leads hitting my calendar went UP. It's like having a clone of my best sales rep.",
-    result: "Saved 15+ hrs/week",
-    resultIcon: "⏰",
+    role: "Business Coach • $40K/mo",
+    content: "I was drowning. 200+ DMs a day, and I was answering the same 10 questions over and over. Now? My AI handles 80% of it, and the leads that DO hit my calendar are pre-qualified. I literally 3x'd my close rate because I'm only talking to buyers.",
+    result: "3x close rate",
+    resultIcon: "📈",
     gradient: "from-indigo-500 to-purple-500"
   },
   {
     name: "Marcus Johnson",
-    role: "Course Creator • $2M/year",
-    content: "The voice clone is scary good. My students literally can't tell the difference. Course completion jumped because they feel like I'm personally checking in on them 24/7.",
-    result: "2x completion rate",
-    resultIcon: "📈",
+    role: "Course Creator • $2.1M/year",
+    content: "The voice clone is WILD. My students literally can't tell it's not me. They're getting 'personal' voice notes from 'me' checking in on their progress—at 3am. Course completion jumped because they feel seen. This is the future.",
+    result: "2x completion",
+    resultIcon: "🎓",
     gradient: "from-pink-500 to-rose-500"
   },
   {
     name: "Elena Rodriguez",
-    role: "Fitness Influencer • 120K",
-    content: "I was super skeptical—how can AI sound like ME? But damn, it nailed my energy. My community loves getting instant responses at 3am. Engagement is through the roof.",
+    role: "Fitness Influencer • 127K followers",
+    content: "I was SUPER skeptical. How can AI capture MY energy? But holy sh*t, it nailed it. My community is getting instant replies at all hours and they love it. DMs went from a chore to a revenue machine. 40% engagement bump in 60 days.",
     result: "+40% engagement",
     resultIcon: "🔥",
     gradient: "from-amber-500 to-orange-500"
@@ -64,13 +64,13 @@ export default function Testimonials() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-10 sm:mb-14"
         >
-          <p className="text-indigo-400 font-semibold mb-3 sm:mb-4 text-sm tracking-wider uppercase">Testimonials</p>
+          <p className="text-indigo-400 font-semibold mb-3 sm:mb-4 text-sm tracking-wider uppercase">Real Results</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-            Creators who{' '}
-            <span className="text-indigo-400">cloned themselves</span>
+            They Cloned Themselves.{' '}
+            <span className="text-indigo-400">You're Next.</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto">
-            Real results from entrepreneurs who took the leap.
+            Don't take our word for it. Here's what happened when they stopped being the bottleneck.
           </p>
         </motion.div>
 
@@ -121,7 +121,7 @@ export default function Testimonials() {
           ))}
         </motion.div>
 
-        {/* Stats row */}
+        {/* Stats row - Social proof with numbers */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -129,9 +129,9 @@ export default function Testimonials() {
           className="mt-10 sm:mt-14 grid grid-cols-3 gap-4 sm:gap-6"
         >
           {[
-            { value: "50+", label: "AI Employees Deployed" },
-            { value: "92%", label: "Client Retention Rate" },
-            { value: "$2.4M", label: "Revenue Generated" }
+            { value: "50+", label: "AI Clones Deployed" },
+            { value: "92%", label: "See ROI in 30 Days" },
+            { value: "$2.4M", label: "Client Revenue Generated" }
           ].map((stat) => (
             <div key={stat.label} className="text-center p-4 sm:p-6 glass-light rounded-xl sm:rounded-2xl">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-indigo-400 mb-1">{stat.value}</div>

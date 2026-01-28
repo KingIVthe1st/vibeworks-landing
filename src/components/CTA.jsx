@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { ArrowRight, Calendar, MessageCircle, Sparkles } from 'lucide-react'
+import { ArrowRight, Calendar, MessageCircle, Sparkles, Clock } from 'lucide-react'
 
 export default function CTA() {
   const ref = useRef(null)
@@ -45,7 +45,7 @@ export default function CTA() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6"
             >
-              Ready to stop being<br className="hidden sm:block" /> the bottleneck?
+              How Many Leads Did You<br className="hidden sm:block" /> Lose Today?
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -53,9 +53,9 @@ export default function CTA() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-base sm:text-lg md:text-xl text-white/80 mb-8 sm:mb-10 max-w-2xl mx-auto"
             >
-              Your competitors are already closing deals while you sleep.
+              Right now, someone in your DMs is ready to buy—and they're waiting for a response they'll never get.
               <br className="hidden md:block" />
-              Let's build an AI that works as hard as you do.
+              <span className="text-white font-semibold">Let's fix that this week.</span>
             </motion.p>
 
             <motion.div 
@@ -69,7 +69,7 @@ export default function CTA() {
                 className="group w-full sm:w-auto px-6 sm:px-8 py-4 bg-white text-slate-900 rounded-xl font-semibold text-base sm:text-lg hover:shadow-xl hover:shadow-black/20 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 mobile-tap"
               >
                 <Calendar className="w-5 h-5" />
-                Book Free Strategy Call
+                Book My Strategy Call
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
@@ -77,18 +77,25 @@ export default function CTA() {
                 className="w-full sm:w-auto px-6 sm:px-8 py-4 bg-white/10 border border-white/20 rounded-xl font-semibold text-base sm:text-lg hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2 mobile-tap"
               >
                 <MessageCircle className="w-5 h-5" />
-                Chat With Our AI
+                Chat With Our AI First
               </a>
             </motion.div>
 
-            <motion.p 
+            <motion.div 
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-6 sm:mt-8 text-white/50 text-xs sm:text-sm"
+              className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-white/50 text-xs sm:text-sm"
             >
-              Free 30-min consultation • No hard sell • See if we're a fit
-            </motion.p>
+              <span className="flex items-center gap-1">
+                <Clock className="w-4 h-4" />
+                30-min free consultation
+              </span>
+              <span className="hidden sm:inline">•</span>
+              <span>No hard sell, ever</span>
+              <span className="hidden sm:inline">•</span>
+              <span>30-day money-back guarantee</span>
+            </motion.div>
           </div>
         </motion.div>
       </div>

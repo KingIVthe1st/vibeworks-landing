@@ -5,26 +5,26 @@ import { Bot, Mic, Brain, Zap, Sparkles } from 'lucide-react'
 const benefits = [
   {
     icon: Brain,
-    title: "Knows Your Business Cold",
-    description: "Trained on your content, courses, and conversations. It understands your methodology like a senior team member.",
+    title: "Trained on YOUR Expertise",
+    description: "We feed it your courses, your podcasts, your sales calls, your email sequences. It doesn't just know your business—it THINKS like you.",
     gradient: "from-blue-500/20 to-indigo-500/20"
   },
   {
     icon: Mic,
-    title: "Speaks in Your Voice",
-    description: "Voice clone technology means your AI can send voice notes and take calls—in your actual voice.",
+    title: "Your Voice. Literally.",
+    description: "Send voice notes in your actual voice. Take calls as you. It's not an impression—it's indistinguishable from the real thing.",
     gradient: "from-purple-500/20 to-pink-500/20"
   },
   {
     icon: Bot,
-    title: "Converts Like You",
-    description: "Same sales psychology, same objection handling, same closing style. Your conversion rate, automated.",
+    title: "Sells Like You Sell",
+    description: "Same objection handling. Same closing cadence. Same conversion psychology. We don't just copy your words—we capture your sales DNA.",
     gradient: "from-indigo-500/20 to-purple-500/20"
   },
   {
     icon: Zap,
-    title: "Never Sleeps",
-    description: "24/7/365. No sick days, no vacations, no 'I'll get back to you Monday.' Always on, always closing.",
+    title: "Never. Stops. Working.",
+    description: "3am in Tokyo? Handled. Sunday morning? On it. Your AI clone doesn't sleep, doesn't take PTO, doesn't need motivation. Just results.",
     gradient: "from-amber-500/20 to-orange-500/20"
   }
 ]
@@ -76,20 +76,19 @@ export default function Solution() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-4 sm:mb-6"
           >
             <Sparkles className="w-4 h-4 text-indigo-400" />
-            <span className="text-sm text-indigo-300 font-medium">The Solution</span>
+            <span className="text-sm text-indigo-300 font-medium">Introducing Vibeworks</span>
           </motion.div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-            Your AI{' '}
+            What If You Could{' '}
             <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              twin
-            </span>{' '}
-            is here
+              Clone Yourself
+            </span>
+            ?
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Not a chatbot. Not a template. A digital version of{' '}
-            <span className="text-white font-medium">you</span>—trained on your expertise, 
-            speaking in your voice, closing on your behalf.
+            Not a chatbot. Not a template. A <span className="text-white font-medium">digital twin</span>—trained 
+            on your content, speaking in your voice, converting like you do.
           </p>
         </motion.div>
 
@@ -119,14 +118,14 @@ export default function Solution() {
           ))}
         </motion.div>
 
-        {/* Visual showcase */}
+        {/* Visual showcase - The "Picture" */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mt-12 sm:mt-16 relative"
         >
-          <div className="aspect-video sm:aspect-[21/9] glass rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center relative group">
+          <div className="aspect-video sm:aspect-[21/9] glass rounded-2xl sm:rounded-3xl overflow-hidden flex items-center justify-center relative group cursor-pointer">
             {/* Animated background */}
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-600/20 to-pink-600/20 opacity-50 group-hover:opacity-70 transition-opacity duration-700" />
             
@@ -139,13 +138,25 @@ export default function Solution() {
               >
                 <Bot className="w-8 h-8 sm:w-12 sm:h-12 text-white" />
               </motion.div>
-              <p className="text-slate-300 text-sm sm:text-base font-medium mb-2">Interactive Demo</p>
-              <p className="text-slate-500 text-xs sm:text-sm">Click to experience your future AI employee</p>
+              <p className="text-slate-300 text-sm sm:text-base font-medium mb-2">🎬 Watch: AI Clone in Action</p>
+              <p className="text-slate-500 text-xs sm:text-sm">See a real Vibeworks AI handling DMs, voice notes & sales calls</p>
             </div>
           </div>
           
           {/* Premium glow */}
           <div className="absolute -inset-px bg-gradient-to-r from-indigo-500/30 via-purple-500/30 to-pink-500/30 rounded-2xl sm:rounded-3xl blur-xl opacity-40 -z-10 group-hover:opacity-60 transition-opacity" />
+        </motion.div>
+
+        {/* Proof snippet */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className="mt-8 sm:mt-10 text-center"
+        >
+          <p className="text-slate-400 text-sm sm:text-base">
+            <span className="text-indigo-400 font-semibold">92% of our clients</span> see positive ROI in the first 30 days.
+          </p>
         </motion.div>
       </div>
     </section>

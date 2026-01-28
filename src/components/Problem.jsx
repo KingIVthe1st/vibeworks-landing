@@ -5,31 +5,31 @@ import { Clock, MessageSquare, TrendingDown, Users, AlertTriangle } from 'lucide
 const problems = [
   {
     icon: Clock,
-    title: "Your Time = Your Ceiling",
-    description: "Every DM, every question, every lead goes through you. Your income is capped by your calendar.",
+    title: "You ARE the Business",
+    description: "Every DM. Every lead. Every question. It all flows through YOU. Your income has a hard ceiling: your calendar.",
     stat: "15+ hrs/week",
-    statLabel: "lost to repetitive messages"
+    statLabel: "answering the same questions"
   },
   {
     icon: MessageSquare,
-    title: "Inbox Bankruptcy",
-    description: "Hundreds of messages pile up while you sleep. Hot leads go cold because you can't reply fast enough.",
+    title: "Inbox = Graveyard",
+    description: "Leads slide into your DMs at 2am. By the time you respond, they've already bought from someone else. Every notification is a reminder you're dropping balls.",
     stat: "78%",
-    statLabel: "of leads ghost after 5 min"
+    statLabel: "of leads ghost after 5 minutes"
   },
   {
     icon: TrendingDown,
-    title: "Leaving Money on the Table",
-    description: "Your competitors are closing deals in your timezone's dead hours. Every unanswered message is lost revenue.",
-    stat: "$3-5K",
-    statLabel: "lost monthly per unanswered lead"
+    title: "You're Bleeding Money",
+    description: "While you're asleep, your competitors are closing. While you're on calls, opportunities are slipping through your fingers. It's costing you more than you realize.",
+    stat: "$3-10K",
+    statLabel: "lost monthly in missed leads"
   },
   {
     icon: Users,
-    title: "The Clone Problem",
-    description: "You can't hire 'you.' Traditional VAs miss your tone, your expertise, your way of converting strangers to buyers.",
-    stat: "4 months",
-    statLabel: "to train a good VA"
+    title: "You Can't Hire You",
+    description: "You've tried VAs. They don't get your voice, your methodology, your way of converting skeptics into believers. Training them takes months—and they still don't sound like you.",
+    stat: "4+ months",
+    statLabel: "to train a decent VA"
   }
 ]
 
@@ -76,17 +76,17 @@ export default function Problem() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-4 sm:mb-6"
           >
             <AlertTriangle className="w-4 h-4 text-red-400" />
-            <span className="text-sm text-red-300 font-medium">The Growth Trap</span>
+            <span className="text-sm text-red-300 font-medium">Warning: The Growth Trap</span>
           </motion.div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-            Success is{' '}
-            <span className="text-red-400">suffocating</span>{' '}
-            you
+            Your Success Is{' '}
+            <span className="text-red-400">Strangling</span>{' '}
+            You
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Your audience is exploding. So is the chaos.{' '}
-            <span className="text-white">Sound familiar?</span>
+            You built something amazing. Now you're drowning in it.{' '}
+            <span className="text-white">Does this sound familiar?</span>
           </p>
         </motion.div>
 
@@ -119,17 +119,19 @@ export default function Problem() {
           ))}
         </motion.div>
 
-        {/* Transition text */}
+        {/* Transition - The "Bridge" in BAB */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-12 sm:mt-16 text-center"
         >
-          <p className="text-lg sm:text-xl text-slate-400">
-            What if you could{' '}
-            <span className="text-indigo-400 font-semibold">clone yourself</span>
-            {' '}without the sci-fi?
+          <p className="text-base sm:text-lg text-slate-500 mb-2">
+            Here's the thing nobody tells you:
+          </p>
+          <p className="text-lg sm:text-xl text-white font-medium">
+            You don't need to work harder. You need to{' '}
+            <span className="text-indigo-400">duplicate yourself</span>.
           </p>
         </motion.div>
       </div>

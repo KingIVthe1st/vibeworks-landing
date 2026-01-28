@@ -46,42 +46,42 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-light mb-6 sm:mb-8"
         >
           <Sparkles className="w-4 h-4 text-indigo-400" />
-          <span className="text-xs sm:text-sm text-indigo-300 font-medium">Your AI Employee is Ready</span>
+          <span className="text-xs sm:text-sm text-indigo-300 font-medium">Finally: AI That Actually Sounds Like You</span>
         </motion.div>
 
-        {/* Main headline - mobile optimized */}
+        {/* Main headline - using "How To" formula with pain point */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-[1.1] tracking-tight"
         >
-          Stop Being the
+          Clone Yourself.
           <br />
           <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Bottleneck
+            Scale Infinitely.
           </span>
         </motion.h1>
 
-        {/* Subheadline - improved copy */}
+        {/* Subheadline - transformation + objection handling */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2"
         >
-          We build AI assistants that speak in your voice, know your business, and work 24/7—so you can{' '}
-          <span className="text-white font-medium">scale without burning out</span>.
+          We build AI employees that speak in <em>your voice</em>, close like <em>you</em>, and work 24/7—so you can{' '}
+          <span className="text-white font-medium">10x your reach without burning out</span>.
         </motion.p>
 
-        {/* Value props - mobile stacked */}
+        {/* Value props - using benefit language */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-8 sm:mb-10 text-sm text-slate-400"
         >
-          {['Voice Clone Tech', 'Lead Qualification', 'Multi-Platform'].map((item) => (
+          {['Your Voice, Literally', 'Closes While You Sleep', 'Live in 2 Weeks'].map((item) => (
             <div key={item} className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-400" />
               <span>{item}</span>
@@ -89,7 +89,7 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* CTA Buttons - mobile optimized */}
+        {/* CTA Buttons - First person, benefit-focused */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ export default function Hero() {
             href="#pricing"
             className="group w-full sm:w-auto px-6 sm:px-8 py-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 bg-[length:200%_100%] rounded-xl font-semibold text-base sm:text-lg hover:bg-[position:100%_0] hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-500 flex items-center justify-center gap-2 btn-premium mobile-tap"
           >
-            Get Your AI Employee
+            Yes, I Want My AI Clone
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </a>
           <a
@@ -112,7 +112,7 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Social proof - refined */}
+        {/* Social proof - specific numbers for credibility */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -138,12 +138,12 @@ export default function Hero() {
             </div>
           </div>
           <p className="text-sm text-slate-500">
-            Trusted by <span className="text-slate-300">50+</span> coaches & creators
+            Join <span className="text-indigo-400 font-semibold">50+ creators</span> who've cloned themselves
           </p>
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator - hidden on very small screens */}
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
