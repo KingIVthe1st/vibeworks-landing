@@ -1,3 +1,4 @@
+import { useState, createContext, useContext } from 'react'
 import Hero from './components/Hero'
 import Problem from './components/Problem'
 import Solution from './components/Solution'
@@ -8,21 +9,37 @@ import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
+import VideoModal from './components/VideoModal'
+
+// Create context for video modal
+export const VideoModalContext = createContext()
+
+export const useVideoModal = () => useContext(VideoModalContext)
 
 function App() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
+
+  const openVideo = () => setIsVideoOpen(true)
+  const closeVideo = () => setIsVideoOpen(false)
+
   return (
-    <div className="min-h-screen bg-zinc-950 text-white antialiased">
-      <Hero />
-      <Problem />
-      <Solution />
-      <HowItWorks />
-      <Features />
-      <Pricing />
-      <Testimonials />
-      <FAQ />
-      <CTA />
-      <Footer />
-    </div>
+    <VideoModalContext.Provider value={{ openVideo, closeVideo, isVideoOpen }}>
+      <div className="min-h-screen bg-zinc-950 text-white antialiased">
+        <Hero />
+        <Problem />
+        <Solution />
+        <HowItWorks />
+        <Features />
+        <Pricing />
+        <Testimonials />
+        <FAQ />
+        <CTA />
+        <Footer />
+        
+        {/* Video Modal */}
+        <VideoModal isOpen={isVideoOpen} onClose={closeVideo} />
+      </div>
+    </VideoModalContext.Provider>
   )
 }
 

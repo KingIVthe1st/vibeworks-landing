@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Brain, Mic2, Target, Clock } from 'lucide-react'
+import { useVideoModal } from '../App'
 
 const benefits = [
   {
@@ -32,6 +33,7 @@ const benefits = [
 export default function Solution() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const { openVideo } = useVideoModal()
 
   return (
     <section className="py-24 sm:py-32 lg:py-40 relative overflow-hidden" ref={ref}>
@@ -85,26 +87,29 @@ export default function Solution() {
           ))}
         </div>
 
-        {/* Demo visual */}
+        {/* Demo visual - clickable to open video */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="relative"
         >
-          <div className="aspect-[21/9] glass rounded-3xl overflow-hidden flex items-center justify-center relative group cursor-pointer glow-hover">
+          <button 
+            onClick={openVideo}
+            className="w-full aspect-[21/9] glass rounded-3xl overflow-hidden flex items-center justify-center relative group cursor-pointer glow-hover"
+          >
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/10 via-purple-600/10 to-pink-600/10 opacity-50 group-hover:opacity-70 transition-opacity duration-700" />
             
             <div className="text-center px-8 relative z-10">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-indigo-500/20">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-indigo-500/20 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                 </svg>
               </div>
               <p className="text-zinc-300 font-medium mb-1">🎬 Watch: AI Clone in Action</p>
-              <p className="text-zinc-500 text-sm">See a real Farrah AI handling DMs, voice notes, and sales calls</p>
+              <p className="text-zinc-500 text-sm">Click to see a 30-second explainer</p>
             </div>
-          </div>
+          </button>
         </motion.div>
 
         {/* Proof point */}
