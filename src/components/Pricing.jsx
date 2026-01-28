@@ -1,11 +1,10 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Check, Sparkles, Zap, Crown, ArrowRight } from 'lucide-react'
+import { Check, ArrowRight } from 'lucide-react'
 
 const plans = [
   {
-    name: "SPARK",
-    icon: Zap,
+    name: "Spark",
     tagline: "For solopreneurs ready to automate",
     setup: "$2,500",
     monthly: "$497",
@@ -16,20 +15,18 @@ const plans = [
       "Real-time Slack/email alerts",
       "1-hour strategy session",
       "Monthly optimization call",
-      "Email support (24h response)"
+      "Email support"
     ],
-    cta: "Yes, I Want Spark",
-    popular: false,
-    gradient: "from-slate-800/50 to-slate-900/50"
+    cta: "Get started",
+    popular: false
   },
   {
-    name: "IGNITE",
-    icon: Sparkles,
-    tagline: "For coaches ready to scale to 7 figures",
+    name: "Ignite",
+    tagline: "For coaches scaling to 7 figures",
     setup: "$5,000",
     monthly: "$997",
     features: [
-      "Everything in SPARK, plus:",
+      "Everything in Spark, plus:",
       "Voice clone (your actual voice)",
       "Instagram + WhatsApp + Messenger",
       "Custom AI persona development",
@@ -38,118 +35,105 @@ const plans = [
       "Bi-weekly strategy calls",
       "Priority support (same day)"
     ],
-    cta: "Yes, Give Me Ignite",
-    popular: true,
-    gradient: "from-indigo-900/60 to-purple-900/60"
+    cta: "Get started",
+    popular: true
   },
   {
-    name: "BLAZE",
-    icon: Crown,
+    name: "Blaze",
     tagline: "White-glove for 7-figure+ brands",
     setup: "$10-15K",
     monthly: "$1,997",
     features: [
-      "Everything in IGNITE, plus:",
+      "Everything in Ignite, plus:",
       "Video AI clone (your face + voice)",
       "Full funnel automation",
       "White-label for your clients",
       "Custom API integrations",
       "Dedicated account manager",
       "Weekly strategy sessions",
-      "Revenue share partnership option"
+      "Revenue share option"
     ],
-    cta: "Let's Talk Blaze",
-    popular: false,
-    gradient: "from-slate-800/50 to-slate-900/50"
+    cta: "Let's talk",
+    popular: false
   }
 ]
 
 export default function Pricing() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="pricing" className="py-16 sm:py-24 bg-gradient-to-b from-slate-900/50 to-slate-950" ref={ref}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="pricing" className="py-24 sm:py-32 lg:py-40 bg-zinc-950/50" ref={ref}>
+      <div className="max-w-6xl mx-auto px-6 sm:px-8">
+        {/* Section header - ROI focused */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-10 sm:mb-14"
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center max-w-3xl mx-auto mb-14 sm:mb-20"
         >
-          <p className="text-indigo-400 font-semibold mb-3 sm:mb-4 text-sm tracking-wider uppercase">Investment</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-            One Client Pays for a{' '}
-            <span className="text-indigo-400">Year of Service</span>
+          <p className="text-indigo-400 font-medium mb-4 text-sm tracking-wide uppercase">Investment</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 leading-tight tracking-tight">
+            One client pays for{' '}
+            <span className="text-indigo-400">a year of service</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto">
-            One-time setup + monthly partnership.{' '}
-            <span className="text-slate-500">No contracts. No BS. Cancel anytime.</span>
+          <p className="text-lg sm:text-xl text-zinc-400 leading-relaxed">
+            One-time setup + monthly partnership. No contracts, no BS.{' '}
+            <span className="text-zinc-500">Cancel anytime.</span>
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Pricing cards */}
+        <div className="grid lg:grid-cols-3 gap-6 lg:gap-5">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className={`relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-500 ${
+              className={`relative p-8 sm:p-10 rounded-2xl transition-all duration-500 ${
                 plan.popular 
-                  ? 'bg-gradient-to-br from-indigo-900/60 to-purple-900/60 border border-indigo-500/50 scale-100 lg:scale-105 shadow-2xl shadow-indigo-500/20' 
-                  : 'glass hover:border-slate-600/50'
+                  ? 'bg-gradient-to-b from-indigo-950/80 to-zinc-900/80 border border-indigo-500/30 lg:scale-105' 
+                  : 'glass'
               }`}
             >
               {plan.popular && (
-                <motion.div 
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.5 }}
-                  className="absolute -top-px left-1/2 -translate-x-1/2 px-6 py-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-b-xl text-sm font-semibold"
-                >
-                  Most Popular
-                </motion.div>
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-indigo-500 rounded-full text-xs font-semibold tracking-wide">
+                  Most popular
+                </div>
               )}
 
-              <div className="flex items-center gap-3 mb-4 sm:mb-5 mt-2">
-                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center ${
-                  plan.popular ? 'bg-indigo-500/20' : 'bg-slate-700/50'
-                }`}>
-                  <plan.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${plan.popular ? 'text-indigo-400' : 'text-slate-400'}`} />
-                </div>
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold">{plan.name}</h3>
-                  <p className="text-slate-400 text-xs sm:text-sm">{plan.tagline}</p>
-                </div>
+              <div className="mb-8">
+                <h3 className="text-2xl font-semibold mb-1">{plan.name}</h3>
+                <p className="text-zinc-500 text-sm">{plan.tagline}</p>
               </div>
 
-              <div className="mb-5 sm:mb-6 pb-5 sm:pb-6 border-b border-slate-700/50">
-                <div className="flex items-baseline gap-2 mb-1">
-                  <span className="text-3xl sm:text-4xl font-bold">{plan.setup}</span>
-                  <span className="text-slate-400 text-sm">setup</span>
+              <div className="mb-8 pb-8 border-b border-zinc-800">
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-4xl font-semibold tracking-tight">{plan.setup}</span>
+                  <span className="text-zinc-500 text-sm">setup</span>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-xl sm:text-2xl font-semibold text-indigo-400">{plan.monthly}</span>
-                  <span className="text-slate-400 text-sm">/month</span>
+                  <span className="text-2xl font-semibold text-indigo-400">{plan.monthly}</span>
+                  <span className="text-zinc-500 text-sm">/month</span>
                 </div>
               </div>
 
-              <ul className="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8">
+              <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-2.5 sm:gap-3">
-                    <Check className={`w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0 ${
-                      plan.popular ? 'text-indigo-400' : 'text-slate-500'
+                  <li key={i} className="flex items-start gap-3">
+                    <Check className={`w-4 h-4 mt-0.5 flex-shrink-0 ${
+                      plan.popular ? 'text-indigo-400' : 'text-zinc-600'
                     }`} />
-                    <span className="text-slate-300 text-xs sm:text-sm">{feature}</span>
+                    <span className="text-zinc-300 text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <button className={`group w-full py-3.5 sm:py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 mobile-tap ${
+              <button className={`group w-full py-4 rounded-full font-semibold transition-all duration-300 flex items-center justify-center gap-2 mobile-tap ${
                 plan.popular
-                  ? 'bg-gradient-to-r from-indigo-500 to-purple-500 hover:shadow-lg hover:shadow-indigo-500/30 btn-premium'
-                  : 'bg-slate-700 hover:bg-slate-600'
+                  ? 'bg-white text-zinc-900 hover:bg-zinc-100'
+                  : 'bg-zinc-800 hover:bg-zinc-700 text-zinc-100'
               }`}>
                 {plan.cta}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -158,36 +142,31 @@ export default function Pricing() {
           ))}
         </div>
 
-        {/* ROI callout - Loss aversion framing */}
+        {/* ROI callout - loss aversion */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-10 sm:mt-14 p-6 sm:p-8 glass rounded-2xl sm:rounded-3xl text-center relative overflow-hidden"
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-14 sm:mt-20 p-8 sm:p-10 glass rounded-2xl text-center"
         >
-          {/* Gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-purple-500/5 to-pink-500/5" />
-          
-          <div className="relative z-10">
-            <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-2">
-              Every day without your AI clone costs you <span className="text-red-400">$100-300</span> in missed leads.
-            </p>
-            <p className="text-slate-400 text-sm sm:text-base">
-              Most clients make back their investment in the <span className="text-indigo-400 font-semibold">first 2 weeks</span>.
-            </p>
-          </div>
+          <p className="text-xl sm:text-2xl font-semibold mb-2 text-zinc-100">
+            Every day without your AI clone costs <span className="text-red-400">$100-300</span> in missed leads.
+          </p>
+          <p className="text-zinc-500">
+            Most clients make back their investment in the <span className="text-indigo-400 font-medium">first 2 weeks</span>.
+          </p>
         </motion.div>
 
-        {/* Trust badges - Risk reversal */}
+        {/* Trust signals */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-slate-500 text-xs sm:text-sm"
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-10 flex flex-wrap items-center justify-center gap-6 text-zinc-500 text-sm"
         >
-          <span>🔒 Secure Stripe Payments</span>
-          <span>💳 Payment Plans Available</span>
-          <span>🤝 30-Day Money-Back Guarantee</span>
+          <span>🔒 Secure payments</span>
+          <span>💳 Payment plans available</span>
+          <span>🤝 30-day money-back guarantee</span>
         </motion.div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { Sparkles, ArrowRight, Play, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, Play, CheckCircle2 } from 'lucide-react'
 import { useRef } from 'react'
 
 export default function Hero() {
@@ -9,7 +9,7 @@ export default function Hero() {
     offset: ["start start", "end start"]
   })
   
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200])
+  const y = useTransform(scrollYProgress, [0, 1], [0, 150])
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
   return (
@@ -17,128 +17,121 @@ export default function Hero() {
       {/* Animated gradient background */}
       <div className="absolute inset-0 animated-gradient" />
       
-      {/* Premium orbs with better animation */}
+      {/* Subtle ambient orbs */}
       <motion.div 
         style={{ y }}
-        className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-indigo-500/30 rounded-full blur-[120px] float"
+        className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-indigo-500/15 rounded-full blur-[150px] float"
       />
       <motion.div 
         style={{ y }}
-        className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-pink-500/20 rounded-full blur-[100px] float-delayed"
+        className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[130px] float-delayed"
       />
       <motion.div 
         style={{ y }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[150px] pulse-ring"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-indigo-500/5 rounded-full blur-[180px] pulse-ring"
       />
-      
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMikiIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnY0em0wLTZ2LTJoLTJ2Mmgyem0tNCAwdi0ySDMwdjJoMnptLTIgMGgtMnYyaDJ2LTJ6bTAgNHYyaDJ2LTJoLTJ6bTQgMGgtMnYyaDJ2LTJ6IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIi8+PC9nPjwvc3ZnPg==')] opacity-40" />
 
       <motion.div 
         style={{ opacity }}
-        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center"
+        className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center"
       >
-        {/* Badge with shimmer */}
-        <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-light mb-6 sm:mb-8"
-        >
-          <Sparkles className="w-4 h-4 text-indigo-400" />
-          <span className="text-xs sm:text-sm text-indigo-300 font-medium">Finally: AI That Actually Sounds Like You</span>
-        </motion.div>
-
-        {/* Main headline - using "How To" formula with pain point */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-[1.1] tracking-tight"
-        >
-          Clone Yourself.
-          <br />
-          <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Scale Infinitely.
-          </span>
-        </motion.h1>
-
-        {/* Subheadline - transformation + objection handling */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2"
-        >
-          We build AI employees that speak in <em>your voice</em>, close like <em>you</em>, and work 24/7—so you can{' '}
-          <span className="text-white font-medium">10x your reach without burning out</span>.
-        </motion.p>
-
-        {/* Value props - using benefit language */}
+        {/* Subtle badge - benefit focused */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-8 sm:mb-10 text-sm text-slate-400"
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-light mb-8 sm:mb-10"
         >
-          {['Your Voice, Literally', 'Closes While You Sleep', 'Live in 2 Weeks'].map((item) => (
+          <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+          <span className="text-sm text-zinc-400 font-medium tracking-wide">AI that actually sounds like you</span>
+        </motion.div>
+
+        {/* Main headline - emotional, benefit-driven */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] font-semibold mb-6 sm:mb-8 leading-[1.05] tracking-tight text-balance"
+        >
+          Clone yourself.
+          <br />
+          <span className="gradient-text">
+            Scale infinitely.
+          </span>
+        </motion.h1>
+
+        {/* Subheadline - clear transformation */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="text-lg sm:text-xl md:text-2xl text-zinc-400 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed"
+        >
+          Farrah AI creates a digital version of you—trained on your voice, your expertise, 
+          your way of selling.{' '}
+          <span className="text-zinc-200">It works while you sleep.</span>
+        </motion.p>
+
+        {/* Value props - quick scan */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10 sm:mb-12 text-sm text-zinc-400"
+        >
+          {['Your voice, literally', 'Closes while you sleep', 'Live in 2 weeks'].map((item) => (
             <div key={item} className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-green-400" />
+              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
               <span>{item}</span>
             </div>
           ))}
         </motion.div>
 
-        {/* CTA Buttons - First person, benefit-focused */}
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16"
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 sm:mb-20"
         >
           <a
             href="#pricing"
-            className="group w-full sm:w-auto px-6 sm:px-8 py-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 bg-[length:200%_100%] rounded-xl font-semibold text-base sm:text-lg hover:bg-[position:100%_0] hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-500 flex items-center justify-center gap-2 btn-premium mobile-tap"
+            className="group w-full sm:w-auto px-8 py-4 bg-white text-zinc-900 rounded-full font-semibold text-base hover:bg-zinc-100 transition-all duration-300 flex items-center justify-center gap-3 mobile-tap"
           >
-            Yes, I Want My AI Clone
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            Get my AI clone
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
           </a>
           <a
             href="#demo"
-            className="w-full sm:w-auto px-6 sm:px-8 py-4 glass rounded-xl font-semibold text-base sm:text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2 mobile-tap"
+            className="w-full sm:w-auto px-8 py-4 glass rounded-full font-medium text-base hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3 mobile-tap"
           >
-            <Play className="w-5 h-5" />
-            See It In Action
+            <Play className="w-4 h-4" />
+            See it in action
           </a>
         </motion.div>
 
-        {/* Social proof - specific numbers for credibility */}
+        {/* Social proof - relatable */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col items-center gap-4"
+          transition={{ duration: 1, delay: 0.5 }}
+          className="flex flex-col items-center gap-5"
         >
           <div className="flex -space-x-3">
-            {[
-              'from-indigo-400 to-purple-500',
-              'from-pink-400 to-rose-500',
-              'from-amber-400 to-orange-500',
-              'from-emerald-400 to-teal-500',
-            ].map((gradient, i) => (
+            {['S', 'M', 'A', 'J'].map((letter, i) => (
               <div
                 key={i}
-                className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br ${gradient} border-2 border-slate-950 flex items-center justify-center text-xs sm:text-sm font-bold`}
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-zinc-800 border-2 border-zinc-900 flex items-center justify-center text-sm font-medium text-zinc-400"
               >
-                {['S', 'M', 'E', 'J'][i]}
+                {letter}
               </div>
             ))}
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-800 border-2 border-slate-950 flex items-center justify-center text-xs sm:text-sm text-slate-400">
-              +47
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-zinc-800/50 border-2 border-zinc-900 flex items-center justify-center text-xs text-zinc-500">
+              +50
             </div>
           </div>
-          <p className="text-sm text-slate-500">
-            Join <span className="text-indigo-400 font-semibold">50+ creators</span> who've cloned themselves
+          <p className="text-sm text-zinc-500">
+            Trusted by <span className="text-zinc-300">50+ coaches & creators</span> who've cloned themselves
           </p>
         </motion.div>
       </motion.div>
@@ -147,15 +140,15 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 hidden sm:block"
+        transition={{ delay: 2 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:block"
       >
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          className="w-6 h-10 border-2 border-white/20 rounded-full flex items-start justify-center p-2"
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          className="w-5 h-8 border border-zinc-700 rounded-full flex items-start justify-center p-1.5"
         >
-          <div className="w-1.5 h-1.5 bg-white/60 rounded-full" />
+          <div className="w-1 h-1.5 bg-zinc-500 rounded-full" />
         </motion.div>
       </motion.div>
     </section>

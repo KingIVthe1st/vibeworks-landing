@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import Hero from './components/Hero'
 import Problem from './components/Problem'
 import Solution from './components/Solution'
@@ -12,7 +11,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen bg-zinc-950 text-white antialiased">
       <Hero />
       <Problem />
       <Solution />
