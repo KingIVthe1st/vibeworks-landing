@@ -38,15 +38,15 @@ const comparisons = [
 const proactiveExamples = [
   {
     time: "6:47 AM",
-    message: "Good morning! ☀️ While you were sleeping, I built out a landing page for that coaching program idea we talked about. It's live on a test URL — check it out and let me know what you'd change. I also drafted the email sequence to go with it."
+    message: "Good morning! ☀️ You got 23 DMs overnight — 3 are brand deal inquiries (one's a $4K opportunity), 8 are customer questions I already handled, and 12 are collabs I filtered. The brand deals are summarized in your notes. Want me to respond or schedule calls?"
   },
   {
-    time: "7:32 AM",
-    message: "Quick heads up — your competitor dropped their prices overnight by 15%. I pulled together 3 response strategies with pros/cons. Want to review before your 9am call?"
+    time: "11:23 AM",
+    message: "Heads up — a creator with 180K followers just mentioned you in their story and you're getting a traffic spike. I'm prioritizing DMs from their audience and flagging anyone who looks like a potential client. Already booked 2 discovery calls."
   },
   {
-    time: "2:15 PM", 
-    message: "You have a call with Sarah in 45 min. I researched her company — they just raised $2M and are scaling fast. Here's a one-pager on what I'd pitch her and the objections she'll probably raise."
+    time: "9:15 PM", 
+    message: "Your launch email went out 3 hours ago. 47 replies so far. I've answered the FAQ-type questions and moved the 'I'm interested but...' objection emails to a folder. 6 people are ready to buy — want me to send the checkout link or wait for you?"
   }
 ]
 
@@ -64,14 +64,14 @@ export default function WhyDifferent() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto mb-16 sm:mb-20"
         >
-          <p className="text-indigo-400 font-medium mb-4 text-sm tracking-wide uppercase">The Difference</p>
+          <p className="text-indigo-400 font-medium mb-4 text-sm tracking-wide uppercase">Why this is different</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 leading-tight tracking-tight">
-            This isn't another{' '}
-            <span className="text-zinc-500 line-through">AI tool</span>
+            You've tried{' '}
+            <span className="text-zinc-500 line-through">chatbots</span>
           </h2>
           <p className="text-lg sm:text-xl text-zinc-400 leading-relaxed">
-            You've seen the chatbots. The "AI assistants" that feel like talking to a wall. 
-            <span className="text-zinc-200"> Farrah is different.</span>
+            They were robotic. They felt off-brand. Your audience could tell.
+            <span className="text-zinc-200"> This is nothing like that.</span>
           </p>
         </motion.div>
 

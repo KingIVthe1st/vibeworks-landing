@@ -150,10 +150,10 @@ export default function Pricing() {
           className="mt-14 sm:mt-20 p-8 sm:p-10 glass rounded-2xl text-center"
         >
           <p className="text-xl sm:text-2xl font-semibold mb-2 text-zinc-100">
-            Every day without your AI clone costs <span className="text-red-400">$100-300</span> in missed leads.
+            One brand deal covers your entire year. <span className="text-red-400">You're missing 3+ per month.</span>
           </p>
           <p className="text-zinc-500">
-            Most clients make back their investment in the <span className="text-indigo-400 font-medium">first 2 weeks</span>.
+            Average client closes <span className="text-indigo-400 font-medium">$12K in new revenue</span> in the first 30 days.
           </p>
         </motion.div>
 

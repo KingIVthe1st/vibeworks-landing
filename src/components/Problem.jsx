@@ -3,28 +3,28 @@ import { useRef } from 'react'
 
 const problems = [
   {
-    stat: "15+",
-    unit: "hrs/week",
-    title: "You ARE the business",
-    description: "Every DM. Every email. Every customer inquiry flows through you. Your growth has a ceiling—your calendar."
+    stat: "147",
+    unit: "DMs",
+    title: "That's today's inbox",
+    description: "Brand deals, customer questions, collabs, spam. All mixed together. By the time you sort through it, the hot leads are ice cold."
   },
   {
-    stat: "78%",
+    stat: "2am",
     unit: "",
-    title: "Opportunities vanish fast",
-    description: "Someone reaches out at 2am. By the time you respond, they've moved on. Speed wins—and you're sleeping."
+    title: "Your best lead messaged",
+    description: "You woke up at 8. They bought from your competitor at 3. Speed wins every time—and you were sleeping."
   },
   {
-    stat: "$3-10K",
+    stat: "$8K",
     unit: "/month",
-    title: "Money left on the table",
-    description: "While you sleep, leads go cold. While you're running operations, DMs pile up. It's costing you more than you realize."
+    title: "That's what you're losing",
+    description: "Not hypothetical. Real math. Missed brand deals. Cold leads. Slow responses. Your inbox is bleeding money."
   },
   {
-    stat: "4+",
-    unit: "months",
-    title: "Hiring doesn't fix it",
-    description: "VAs don't sound like you. Chatbots feel robotic. Training takes forever. You need a clone, not an employee."
+    stat: "0",
+    unit: "days off",
+    title: "When's your last real break?",
+    description: "Vacation? You're still checking DMs. Sick? Still responding. You've built a business that can't survive without you."
   }
 ]
 
@@ -42,14 +42,14 @@ export default function Problem() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-3xl mb-16 sm:mb-20"
         >
-          <p className="text-red-400/80 font-medium mb-4 text-sm tracking-wide uppercase">Sound familiar?</p>
+          <p className="text-red-400/80 font-medium mb-4 text-sm tracking-wide uppercase">The truth nobody talks about</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 leading-tight tracking-tight">
-            Your success is{' '}
-            <span className="text-red-400">strangling</span> you
+            Your audience is{' '}
+            <span className="text-red-400">outgrowing</span> you
           </h2>
           <p className="text-lg sm:text-xl text-zinc-400 leading-relaxed">
-            You built something incredible. Now you're drowning in it. 
-            The more you grow, the more <em>you</em> become the bottleneck.
+            Every follower you gain is another person who expects a response. 
+            The math doesn't work. <em>You can't scale yourself</em>—but your competitors are figuring out how.
           </p>
         </motion.div>
 
@@ -91,8 +91,8 @@ export default function Problem() {
           className="mt-16 sm:mt-20 text-center"
         >
           <p className="text-lg sm:text-xl text-zinc-300 font-medium">
-            You don't need to work harder.
-            <span className="text-indigo-400 block sm:inline sm:ml-2">You need to duplicate yourself.</span>
+            The creators who scale aren't working harder.
+            <span className="text-indigo-400 block sm:inline sm:ml-2">They've cloned themselves.</span>
           </p>
         </motion.div>
       </div>

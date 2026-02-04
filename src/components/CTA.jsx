@@ -25,7 +25,7 @@ export default function CTA() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 leading-tight tracking-tight"
             >
-              Ready to clone yourself?
+              Your competitors already have one.
             </motion.h2>
             
             <motion.p
@@ -34,9 +34,9 @@ export default function CTA() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg sm:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed"
             >
-              Stop drowning in tasks. Stop missing opportunities.
+              While you're manually answering DMs, they're closing deals in their sleep.
               <br className="hidden sm:block" />
-              <span className="text-zinc-200">Get your time back.</span>
+              <span className="text-zinc-200">How long before your audience notices the difference?</span>
             </motion.p>
 
             <motion.div
@@ -48,7 +48,7 @@ export default function CTA() {
                 href="#pricing"
                 className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-zinc-900 rounded-full font-semibold text-base hover:bg-zinc-100 transition-all duration-300 mobile-tap"
               >
-                Get my AI clone
+                Get my clone now
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
             </motion.div>
@@ -60,7 +60,7 @@ export default function CTA() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="mt-8 text-zinc-500 text-sm"
             >
-              Every day without your clone costs you opportunities. <span className="text-zinc-400">Let's fix that.</span>
+              We only onboard <span className="text-indigo-400">4 new clients per month</span> (white-glove takes time). <span className="text-zinc-400">Check availability.</span>
             </motion.p>
           </div>
         </motion.div>

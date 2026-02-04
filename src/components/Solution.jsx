@@ -6,27 +6,27 @@ import ChatDemo from './ChatDemo'
 const benefits = [
   {
     icon: Brain,
-    title: "Trained on YOUR business",
-    description: "We feed it your content, your sales style, your way of talking. It doesn't just know your business—it thinks like you.",
-    tag: "Custom training"
+    title: "She knows your business better than your VA",
+    description: "2 weeks of white-glove training. We study your sales calls, your content, your voice. She doesn't just respond—she closes.",
+    tag: "Expert setup"
   },
   {
     icon: Mic2,
-    title: "Your voice. Literally.",
-    description: "Voice notes in your actual voice. Responses that sound like you wrote them. It's indistinguishable from the real thing.",
-    tag: "Neural voice clone"
+    title: "Your followers can't tell the difference",
+    description: "Your actual voice. Your actual tone. Responses so authentic, people ask how you reply so fast. (Let them wonder.)",
+    tag: "Voice clone"
   },
   {
     icon: Target,
-    title: "Handles what drowns you",
-    description: "DMs, emails, customer inquiries, scheduling, follow-ups. The stuff that eats your day? Gone.",
-    tag: "Task automation"
+    title: "Wake up to opportunities, not chaos",
+    description: "DMs sorted. Hot leads flagged. Brand deals summarized. That 3am message? She already qualified them and booked the call.",
+    tag: "Proactive"
   },
   {
     icon: Clock,
-    title: "Never. Stops. Working.",
-    description: "3am inquiry? Handled. Sunday morning? On it. Your AI clone doesn't sleep, doesn't take breaks. Just results.",
-    tag: "24/7 operation"
+    title: "Finally take a vacation",
+    description: "Your business runs whether you're there or not. Beach? Mountains? Off the grid? She's got it. No guilt, no anxiety.",
+    tag: "Freedom"
   }
 ]
 
@@ -47,14 +47,15 @@ export default function Solution() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto mb-16 sm:mb-20"
         >
-          <p className="text-indigo-400 font-medium mb-4 text-sm tracking-wide uppercase">Meet Farrah AI</p>
+          <p className="text-indigo-400 font-medium mb-4 text-sm tracking-wide uppercase">The solution</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 leading-tight tracking-tight">
-            Your digital{' '}
-            <span className="gradient-text">twin</span>
+            What if there were{' '}
+            <span className="gradient-text">two of you?</span>
           </h2>
           <p className="text-lg sm:text-xl text-zinc-400 leading-relaxed">
-            Not a chatbot. Not a template. A <span className="text-zinc-200 font-medium">clone of you</span>—
-            trained on your expertise, speaking in your voice, working while you sleep.
+            Farrah isn't a chatbot—she's <span className="text-zinc-200 font-medium">you, multiplied</span>. 
+            Trained by experts on your content, your sales process, your personality. 
+            She handles the grind so you can do what only you can do.
           </p>
         </motion.div>
 

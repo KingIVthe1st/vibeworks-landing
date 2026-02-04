@@ -62,17 +62,17 @@ export default function Hero() {
           </span>
         </motion.h1>
 
-        {/* Subheadline - ENHANCED */}
+        {/* Subheadline - CONVERSION OPTIMIZED */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg sm:text-xl md:text-2xl text-zinc-400 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed"
         >
-          Farrah isn't another AI tool — she's a{' '}
-          <span className="text-zinc-200">custom-trained digital partner</span> who learns your business, 
-          speaks in your voice, and actually comes to YOU with opportunities.{' '}
-          <span className="text-zinc-200">She doesn't wait. She works.</span>
+          Imagine waking up to DMs already answered, leads already qualified, 
+          and a report on opportunities <span className="text-zinc-200">you would have missed</span>.{' '}
+          Farrah is trained on <em>your</em> voice, <em>your</em> style, <em>your</em> business.{' '}
+          <span className="text-zinc-200">She doesn't wait for commands. She hunts.</span>
         </motion.p>
 
         {/* Value props - UPDATED */}
@@ -138,7 +138,7 @@ export default function Hero() {
             </div>
           </div>
           <p className="text-sm text-zinc-500">
-            Trusted by <span className="text-zinc-300">entrepreneurs who tried ChatGPT</span> and needed more
+            <span className="text-zinc-300">"I made back the setup cost in 11 days."</span> — Coach, 47K followers
           </p>
         </motion.div>
       </motion.div>
