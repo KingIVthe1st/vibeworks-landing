@@ -1,10 +1,8 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, Play, CheckCircle2 } from 'lucide-react'
 import { useRef } from 'react'
-import { useVideoModal } from '../App'
 
 export default function Hero() {
-  const { openVideo } = useVideoModal()
   const containerRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -108,13 +106,13 @@ export default function Hero() {
             Get my AI clone
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
           </a>
-          <button
-            onClick={openVideo}
+          <a
+            href="#demo"
             className="w-full sm:w-auto px-8 py-4 glass rounded-full font-medium text-base hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3 mobile-tap"
           >
             <Play className="w-4 h-4" />
             See it in action
-          </button>
+          </a>
         </motion.div>
 
         {/* Social proof - UPDATED */}
