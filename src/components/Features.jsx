@@ -14,15 +14,15 @@ import {
 } from 'lucide-react'
 
 const features = [
-  { icon: MessageCircle, title: "Contextual dialogue", description: "Multi-turn conversations with memory" },
+  { icon: MessageCircle, title: "DM automation", description: "AI handles Instagram & TikTok DMs" },
   { icon: Mic2, title: "Voice synthesis", description: "Neural voice clone technology" },
   { icon: Calendar, title: "Calendar integration", description: "Automated scheduling + reminders" },
   { icon: BarChart3, title: "Lead scoring", description: "ML-powered qualification" },
   { icon: Globe, title: "Omnichannel", description: "Web, IG, WhatsApp, email, SMS" },
   { icon: Shield, title: "Guardrails", description: "Brand-safe, compliant responses" },
-  { icon: Zap, title: "Real-time", description: "Sub-second response latency" },
+  { icon: Zap, title: "Proactive alerts", description: "Comes to YOU with opportunities" },
   { icon: Users, title: "CRM sync", description: "Bi-directional data flow" },
-  { icon: GitBranch, title: "A/B testing", description: "Optimize conversion patterns" },
+  { icon: GitBranch, title: "Continuous learning", description: "Gets smarter every day" },
   { icon: LineChart, title: "Analytics", description: "Revenue attribution + insights" }
 ]
 

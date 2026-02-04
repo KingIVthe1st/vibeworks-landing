@@ -2,6 +2,8 @@ import { useState, createContext, useContext } from 'react'
 import Hero from './components/Hero'
 import Problem from './components/Problem'
 import Solution from './components/Solution'
+import WhyDifferent from './components/WhyDifferent'
+import UseCases from './components/UseCases'
 import HowItWorks from './components/HowItWorks'
 import Features from './components/Features'
 import Pricing from './components/Pricing'
@@ -28,6 +30,8 @@ function App() {
         <Hero />
         <Problem />
         <Solution />
+        <WhyDifferent />
+        <UseCases />
         <HowItWorks />
         <Features />
         <Pricing />

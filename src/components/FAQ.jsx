@@ -4,56 +4,69 @@ import { Plus, Minus } from 'lucide-react'
 
 const faqs = [
   {
-    question: "How fast can you build my AI?",
-    answer: "Most projects launch in 1-2 weeks. That includes our discovery call, building & training your AI, configuring integrations, and your walkthrough. Complex setups with video cloning may take 2-3 weeks."
+    question: "How is this different from ChatGPT or other AI tools?",
+    answer: "ChatGPT is a generic tool that waits for you to tell it what to do. Farrah is custom-trained on YOUR business, YOUR voice, YOUR sales style — and she's proactive. She comes to YOU with opportunities, alerts, and ideas. She doesn't just answer questions; she anticipates what you need. Plus, she's set up by experts (not self-serve), gets smarter every day, and works across all your platforms — voice, text, calls, everything."
   },
   {
-    question: "Will people know they're talking to AI?",
-    answer: "Your choice. Many clients go transparent ('Hi! I'm Sarah's AI assistant'), others prefer seamless. We train your AI to handle the question gracefully either way. With voice cloning, it genuinely sounds like you."
+    question: "Will it actually sound like me?",
+    answer: "Yes. We train it on YOUR voice, your phrases, your communication style. We've had clients' teams not realize they were talking to AI. It's not a generic chatbot—it's a clone of how YOU communicate."
   },
   {
     question: "What if it says something wrong?",
-    answer: "We train your AI on your boundaries, values, and guidelines. It knows what to avoid, when to escalate to you, and how to stay on-brand. You can review transcripts anytime, and we continuously optimize based on real conversations."
+    answer: "You approve responses initially and set guardrails. It learns your preferences over time. For sensitive situations, you can always step in. Think of it like training a really smart employee—except it learns 100x faster."
   },
   {
-    question: "Do I need technical skills?",
-    answer: "Zero. We handle all the technical setup, integrations, and maintenance. You just show up for our discovery call and share your expertise. It's as simple as texting."
+    question: "I've tried chatbots before. They suck.",
+    answer: "We hear this all the time. Traditional chatbots ARE terrible—they're generic templates that feel robotic. Farrah is different. It's trained specifically on YOUR business, YOUR methodology, YOUR voice. It's a clone, not a chatbot."
   },
   {
-    question: "What platforms does it work on?",
-    answer: "Website, Instagram DMs, WhatsApp, Facebook Messenger, email, Slack, Discord, and more. We'll recommend the best platforms based on where your audience already reaches out."
+    question: "How long does setup take?",
+    answer: "2 weeks to go live. We handle everything—you just do a voice interview and share your existing content (emails, DMs, sales scripts). Most clients are surprised how painless it is."
   },
   {
-    question: "How is this different from ChatGPT?",
-    answer: "ChatGPT is generic. Your Farrah AI is trained specifically on YOUR content, speaks in YOUR voice, knows YOUR business, and is optimized for YOUR sales process. It's the difference between a random temp and cloning your best employee."
+    question: "What can it actually handle?",
+    answer: "DMs, emails, customer inquiries, scheduling, lead qualification, follow-ups, FAQ responses, booking calls—basically anything that eats your time and doesn't require YOU specifically. We customize based on what's drowning you."
   },
   {
-    question: "Can I cancel anytime?",
-    answer: "Yes—no long-term contracts. Cancel your monthly plan anytime. We believe in earning your business every month. That said, most clients stay because the ROI is undeniable."
+    question: "Is my data safe?",
+    answer: "Yes. Enterprise-grade security. Your data trains only YOUR AI—it's never shared with other clients or used to train other models. We're SOC 2 compliant and take privacy seriously."
   },
   {
-    question: "What makes Farrah AI different from other AI tools?",
-    answer: "We've built proprietary technology for voice synthesis, knowledge extraction, and conversion optimization over 18 months. We're not a wrapper around ChatGPT—we've developed specialized infrastructure for expertise replication."
+    question: "Can it handle multiple platforms?",
+    answer: "Absolutely. Instagram DMs, WhatsApp, email, website chat, SMS—we deploy across all your channels so you're covered everywhere your customers reach out."
+  },
+  {
+    question: "What if I want to cancel?",
+    answer: "No contracts, no BS. Cancel anytime. We're confident you won't want to—most clients see ROI in the first 2 weeks—but you're never locked in."
   }
 ]
 
 function FAQItem({ faq, isOpen, onClick }) {
   return (
-    <div className={`border-b border-zinc-800/50 ${isOpen ? 'bg-zinc-900/30' : ''} transition-colors duration-300`}>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="border-b border-zinc-800 last:border-0"
+    >
       <button
         onClick={onClick}
-        className="w-full py-6 flex items-center justify-between text-left hover:bg-zinc-900/20 transition-colors duration-300 mobile-tap"
+        className="w-full py-6 flex items-center justify-between text-left group"
       >
-        <span className="font-medium text-base sm:text-lg pr-8 text-zinc-100">{faq.question}</span>
-        <div className="w-8 h-8 bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0">
+        <span className="text-lg font-medium text-zinc-100 pr-8 group-hover:text-white transition-colors">
+          {faq.question}
+        </span>
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+          isOpen ? 'bg-indigo-500 rotate-180' : 'bg-zinc-800 group-hover:bg-zinc-700'
+        }`}>
           {isOpen ? (
-            <Minus className="w-4 h-4 text-zinc-400" />
+            <Minus className="w-4 h-4 text-white" />
           ) : (
             <Plus className="w-4 h-4 text-zinc-400" />
           )}
         </div>
       </button>
-      <AnimatePresence initial={false}>
+      
+      <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
@@ -62,11 +75,13 @@ function FAQItem({ faq, isOpen, onClick }) {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-zinc-400 leading-relaxed pr-12">{faq.answer}</p>
+            <p className="pb-6 text-zinc-400 leading-relaxed pr-12">
+              {faq.answer}
+            </p>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   )
 }
 
@@ -76,27 +91,27 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0)
 
   return (
-    <section className="py-24 sm:py-32 lg:py-40 bg-zinc-950/50" ref={ref}>
-      <div className="max-w-3xl mx-auto px-6 sm:px-8">
+    <section className="py-24 sm:py-32 lg:py-40" ref={ref}>
+      <div className="max-w-4xl mx-auto px-6 sm:px-8">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-14 sm:mb-20"
         >
-          <p className="text-indigo-400 font-medium mb-4 text-sm tracking-wide uppercase">FAQ</p>
+          <p className="text-indigo-400 font-medium mb-4 text-sm tracking-wide uppercase">Questions?</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-tight">
-            Questions? <span className="text-indigo-400">Answered.</span>
+            Let's clear things up
           </h2>
         </motion.div>
 
-        {/* Accordion */}
+        {/* FAQ list */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="glass rounded-2xl overflow-hidden px-6 sm:px-8"
+          className="glass rounded-2xl p-6 sm:p-10"
         >
           {faqs.map((faq, index) => (
             <FAQItem
@@ -108,18 +123,21 @@ export default function FAQ() {
           ))}
         </motion.div>
 
-        {/* Contact note */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
+        {/* Still have questions */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-10 text-center text-zinc-500"
+          className="mt-10 text-center"
         >
-          Still have questions?{' '}
-          <a href="mailto:hello@farrah.ai" className="text-indigo-400 hover:text-indigo-300 transition-colors">
-            hello@farrah.ai
-          </a>
-        </motion.p>
+          <p className="text-zinc-500">
+            Still have questions?{' '}
+            <a href="#pricing" className="text-indigo-400 hover:text-indigo-300 font-medium transition-colors">
+              Book a call
+            </a>
+            {' '}and we'll answer everything.
+          </p>
+        </motion.div>
       </div>
     </section>
   )

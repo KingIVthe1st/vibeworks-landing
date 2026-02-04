@@ -37,7 +37,7 @@ export default function Hero() {
         style={{ opacity }}
         className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center"
       >
-        {/* Subtle badge - benefit focused */}
+        {/* Subtle badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -45,43 +45,48 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-light mb-8 sm:mb-10"
         >
           <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-          <span className="text-sm text-zinc-400 font-medium tracking-wide">AI that actually sounds like you</span>
+          <span className="text-sm text-zinc-400 font-medium tracking-wide">Not a chatbot. A partner.</span>
         </motion.div>
 
-        {/* Main headline - emotional, benefit-driven */}
+        {/* Main headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] font-semibold mb-6 sm:mb-8 leading-[1.05] tracking-tight text-balance"
         >
-          Clone yourself.
+          What if you had
           <br />
           <span className="gradient-text">
-            Scale infinitely.
+            a clone?
           </span>
         </motion.h1>
 
-        {/* Subheadline - clear transformation */}
+        {/* Subheadline - ENHANCED */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg sm:text-xl md:text-2xl text-zinc-400 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed"
         >
-          Farrah AI creates a digital version of you—trained on your voice, your expertise, 
-          your way of selling.{' '}
-          <span className="text-zinc-200">It works while you sleep.</span>
+          Farrah isn't another AI tool — she's a{' '}
+          <span className="text-zinc-200">custom-trained digital partner</span> who learns your business, 
+          speaks in your voice, and actually comes to YOU with opportunities.{' '}
+          <span className="text-zinc-200">She doesn't wait. She works.</span>
         </motion.p>
 
-        {/* Value props - quick scan */}
+        {/* Value props - UPDATED */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10 sm:mb-12 text-sm text-zinc-400"
         >
-          {['Your voice, literally', 'Closes while you sleep', 'Live in 2 weeks'].map((item) => (
+          {[
+            'Proactive, not reactive', 
+            'Custom-trained by experts', 
+            'Gets smarter every day'
+          ].map((item) => (
             <div key={item} className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
               <span>{item}</span>
@@ -112,7 +117,7 @@ export default function Hero() {
           </button>
         </motion.div>
 
-        {/* Social proof - relatable */}
+        {/* Social proof - UPDATED */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -120,7 +125,7 @@ export default function Hero() {
           className="flex flex-col items-center gap-5"
         >
           <div className="flex -space-x-3">
-            {['S', 'M', 'A', 'J'].map((letter, i) => (
+            {['N', 'T', 'M', 'J'].map((letter, i) => (
               <div
                 key={i}
                 className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-zinc-800 border-2 border-zinc-900 flex items-center justify-center text-sm font-medium text-zinc-400"
@@ -133,7 +138,7 @@ export default function Hero() {
             </div>
           </div>
           <p className="text-sm text-zinc-500">
-            Trusted by <span className="text-zinc-300">50+ coaches & creators</span> who've cloned themselves
+            Trusted by <span className="text-zinc-300">entrepreneurs who tried ChatGPT</span> and needed more
           </p>
         </motion.div>
       </motion.div>

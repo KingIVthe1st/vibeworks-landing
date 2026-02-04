@@ -6,25 +6,25 @@ const problems = [
     stat: "15+",
     unit: "hrs/week",
     title: "You ARE the business",
-    description: "Every DM. Every email. Every question flows through you. Your income has a ceiling—your calendar."
+    description: "Every DM. Every email. Every customer inquiry flows through you. Your growth has a ceiling—your calendar."
   },
   {
     stat: "78%",
     unit: "",
-    title: "Leads ghost after 5 minutes",
-    description: "They reach out at 2am. By the time you respond, they've bought from someone else. Speed wins."
+    title: "Opportunities vanish fast",
+    description: "Someone reaches out at 2am. By the time you respond, they've moved on. Speed wins—and you're sleeping."
   },
   {
     stat: "$3-10K",
     unit: "/month",
     title: "Money left on the table",
-    description: "While you sleep, opportunities vanish. While you're on calls, DMs pile up. It's costing you more than you think."
+    description: "While you sleep, leads go cold. While you're running operations, DMs pile up. It's costing you more than you realize."
   },
   {
     stat: "4+",
     unit: "months",
-    title: "VAs don't get it",
-    description: "You've tried hiring. They don't sound like you, don't sell like you, don't understand your methodology. Training takes forever."
+    title: "Hiring doesn't fix it",
+    description: "VAs don't sound like you. Chatbots feel robotic. Training takes forever. You need a clone, not an employee."
   }
 ]
 
@@ -35,7 +35,7 @@ export default function Problem() {
   return (
     <section className="py-24 sm:py-32 lg:py-40 bg-zinc-950/50" ref={ref}>
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
-        {/* Section header - emotional */}
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
